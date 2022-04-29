@@ -1,0 +1,11 @@
+CREATE TABLE IF NOT EXISTS users (
+    id INTEGER PRIMARY KEY,
+    slack_id VARCHAR(50) NOT NULL,
+    team_id VARCHAR(50) NOT NULL,
+    display_name VARCHAR(255),
+    real_name VARCHAR(255),
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE UNIQUE INDEX idx_slack_id ON users (slack_id)
